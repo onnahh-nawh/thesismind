@@ -215,7 +215,7 @@ Dashboard LangSmith menampilkan trace setiap eksekusi graph, termasuk LLM call, 
 
 1. Clone repository:
    ```bash
-   git clone https://github.com/username/thesismind.git
+   git clone https://github.com/onnahh-nawh/thesismind.git
    cd thesismind
    ```
 
