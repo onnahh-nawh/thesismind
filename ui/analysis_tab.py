@@ -78,8 +78,8 @@ def render_analysis_tab():
         steps = [
             ("📄 Informasi Skripsi", "information", lambda: information_agent(full_text)),
             ("📝 Ringkasan Eksekutif", "summary", lambda: summary_agent(full_text)),
-            ("⚠️ Kelemahan Utama", "weakness", lambda: weakness_agent(full_text)),
             ("🎓 Pertanyaan Sidang", "examiner", lambda: examiner_agent(full_text)),
+            ("⚠️ Kelemahan Utama", "weakness", lambda: weakness_agent(full_text)),
             ("📚 Research Gap & Kontribusi", "literature", lambda: literature_agent(full_text)),
         ]
 
