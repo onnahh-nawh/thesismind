@@ -16,7 +16,7 @@ Sistem berbasis NLP/LLM untuk membantu mahasiswa menganalisis skripsi menggunaka
 
 | Fitur | Deskripsi |
 |-------|-----------|
-| **Multi-Agent Analysis** | 6 agen AI pipeline: ekstraksi info → ringkasan → kelemahan → pertanyaan sidang → research gap → kesimpulan |
+| **Multi-Agent Analysis** | 6 agen AI pipeline: ekstraksi info → ringkasan → pertanyaan sidang → kelemahan → research gap → kesimpulan |
 | **Chat RAG** | Tanya-jawab interaktif dengan konteks skripsi + citation halaman |
 | **Chapter-Aware Retrieval** | Deteksi otomatis bab dari pertanyaan untuk retrieval yang lebih presisi |
 | **Validasi Dokumen** | Deteksi otomatis apakah dokumen adalah skripsi (rule-based) |
@@ -133,8 +133,8 @@ Digunakan untuk mengorkestrasi multi-agent workflow sebagai state graph:
 | `compile()` | `graph/workflow.py:226` | Mengompilasi graph |
 
 Dua jalur utama yang didefinisikan:
-- **Analyze**: `router → information → summary → examiner → weakness → literature → conclusion → report` (dieksekusi via `run_analysis()`, untuk pemanggilan terprogram)
-- **Chat**: `router → retrieve → qa` (dieksekusi via `run_chat()`, digunakan di Chat tab)
+- **Analyze**: `router → information → summary → examiner → weakness → literature → conclusion → report → END` (dieksekusi via `run_analysis()`, untuk pemanggilan terprogram)
+- **Chat**: `router → retrieve → qa → END` (dieksekusi via `run_chat()`, digunakan di Chat tab)
 
 > Saat ini, Analysis tab memanggil agent secara langsung (bukan via graph) agar progress bar real-time bisa ditampilkan per-agent.
 
